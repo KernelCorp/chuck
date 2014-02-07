@@ -1,0 +1,154 @@
+//начало с согласной и 3 согласных в слове = 3 согласных
+//начало с гласной и 2 согласных в вслове = гласная и 2 согласных
+//иначе 3 первые буквы
+
+//исключения: направления -> t b r l, z-index -> z, fixed -> fix
+
+hei()
+  height _u(arguments)
+hei-min()
+  min-height _u(arguments)
+wid()
+  width _u(arguments)
+wid-min()
+  min-width _u(arguments)
+pad()
+  _d( padding, arguments )
+mar()
+  if arguments == cen
+    margin-left auto; margin-right auto;
+  else
+    _d( margin, arguments )
+
+bor-clr()
+  border-color _c(arguments)
+bor-rds()
+  border-radius _u(arguments)
+bor-wid()
+  border-width _u(arguments)
+
+ver-ali()
+  vertical-align _v( arguments, (t top) (b bottom) (bas baseline) (mid middle) )
+dis()
+  display _v( arguments[0], (blo block) (inl-blo inline-block) (tbl table) (inl inline) )
+  va arguments[1] if arguments[1]
+
+txt-siz()
+  font-size _u(arguments)
+txt-fml()
+  font-family arguments
+txt-stl()
+  font-style _v( arguments, (ita italic) () )
+txt-wei()
+  font-weight _v( arguments, (bld bold) () )
+txt-hei()
+  line-height _u(arguments)
+txt-clr()
+  color _c(arguments)
+txt-ali()
+  text-align _v( arguments, (l left) (r right) (cen center) (jus justify) )
+txt-dec()
+  text-decoration _v( arguments, (thr line-through) (ove overline) (und underline) )
+txt-tra()
+  text-transform _v( arguments, (cap capitalize) (low lowercase) (upp uppercase) )
+txt-sha()
+  text-shadow _u(arguments)
+txt-spa()
+  word-spacing _u(arguments)
+
+bac()
+  background _u(arguments)
+bac-img()
+  background-image arguments
+bac-clr()
+  background-color _c(arguments)
+bac-siz()
+  background-size _u(arguments)
+bac-pos()
+  background-position arguments
+bac-rpt()
+  background-repeat arguments
+
+tra()
+  transition arguments
+tra-pro()
+  transition-property arguments
+tra-dur()
+  transition-duration arguments
+tra-fun()
+  transition-timing-function arguments
+trd-del()
+  transition-delay arguments
+
+t()
+  top _u(arguments)
+b()
+  bottom _u(arguments)
+l()
+  left _u(arguments)
+r()
+  right _u(arguments)
+
+ext()
+  for class in arguments
+    @extend .{class}
+
+pos()
+  position _v( arguments, (abs absolute) (rel relative) (fix fixed) )
+abs()
+  absolute _u(arguments)
+rel()
+  relative _u(arguments)
+fix()
+  fixed _u(arguments)
+z()
+  z-index arguments
+
+opa()
+  opacity arguments
+
+cur()
+  cursor _v( arguments, (def default) (txt text) (hnd pointer) )
+
+box()
+  box-sizing _v( arguments, (con content-box) (pad padding-box) (bor border-box) )
+
+ove()
+  overflow _v( arguments, (vis visible) (hid hidden) (scr scroll) )
+
+box-sha()
+  box-shadow _u(arguments)
+
+con()
+  content arguments
+
+
+_border_args( prefix, args )
+  for arg in args
+    if arg is a 'unit' && length(arg) == 1
+      border{prefix}-width arg
+    else if arg is a 'ident'
+      border{prefix}-style arg
+    else
+      border{prefix}-color length(arg) > 1 ? _c(arg) : arg
+
+bor(args...)
+  args = _u(args)
+
+  dir = _dir( args[0] )
+  dir = '-'+dir if dir
+  dir_arg = ()
+
+  start = dir ? 1 : 0
+
+  for i in (start...length(args))
+    dir_new = _dir( args[i] )
+    if dir_new
+      _border_args( dir, dir_arg )
+      dir = '-'+dir_new
+      dir_arg = ()
+    else
+      push( dir_arg, args[i] )
+
+  _border_args( dir, dir_arg )
+

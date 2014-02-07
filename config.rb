@@ -48,6 +48,7 @@
 ###
 # Gem
 ###
+
 require 'slim'
 
 set :css_dir, 'stylesheets'

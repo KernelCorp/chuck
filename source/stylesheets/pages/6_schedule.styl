@@ -1,0 +1,51 @@
+#page_schedule
+  hei 445
+  bac-clr red
+  txt-clr white
+  pad t 25
+
+  &_link
+    pad l 7
+    txt-siz 25.61
+
+  &_days
+    mar t 35
+    pad l 83
+
+    .title
+      txt-siz 24
+      mar b 20
+
+    .class + .class
+      mar t 10
+
+    .time, .subject, .hour, .minute
+      ext ib
+
+    .time
+      bor t 1 solid (0 0 100)
+      wid 114
+      pad t 15
+
+    .hour
+      txt-siz 26
+      txt-hei 26
+    .minute
+      mar l 2
+      txt-siz 18
+      txt-hei 18
+      
+    .subject
+      mar l -60
+      bor l 1 solid (0 0 100)
+      pad t 10
+      wid 90
+      txt-hei 18
+      txt-ali cen
+
+    .style
+      txt-siz 18
+
+    .age
+      txt-siz 14
+      txt-stl ita

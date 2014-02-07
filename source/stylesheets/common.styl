@@ -1,0 +1,63 @@
+dark = hsl( 0, 0, 20 )
+red = hsl( 19, 100, 34 ) 
+//red = 20 100 30
+
+body
+  bac-clr dark
+
+#app
+  wid 320
+  mar cen
+  bac-clr rgb(252, 255, 255)
+  txt-fml Myriad Pro
+  txt-clr dark
+  box-sha 0 0 20 (0 0 0 0.8)
+
+.ib
+  dis inl-blo
+  ver-ali t
+
+.page
+  pos rel
+
+.menu_top
+  pos rel
+
+  &:after
+    dis blo
+    pos abs
+    t 100%
+    l 0
+    r 0
+    z 10
+    con ''
+
+
+  &.dark
+    bac-clr dark
+
+    &:after
+      bac-img url('/images/triangle_black.jpg')
+      hei 24
+
+  &.red
+    bac-clr red
+
+    &:after
+      bac-img url('/images/triangle_red.jpg')
+      hei 16
+
+.txt_dark
+  txt-clr dark
+.txt_red
+  txt-clr red
+
+.header
+  txt-siz 24
+  txt-hei 24
+  txt-wei bld
+.content_text
+  dis blo
+  pad l 22 r 22
+  txt-siz 17
+  txt-hei 20

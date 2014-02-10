@@ -1,10 +1,16 @@
 #page_start
   hei 480
-  bac url('/images/img_1.jpg') center 105 no-repeat
+  bac url('../../images/img_1.jpg') center 105 no-repeat
 
   .menu_top
     pad t 14
     hei 28
+
+    &.search_activated
+      .age_group
+        dis non
+      #page_start_search
+        dis blo
 
   .age_group
     dis tbl
@@ -15,6 +21,14 @@
     txt-siz 20
     txt-hei 20
 
+  &_search
+    pos abs
+    wid 168
+    l 65
+    t 9
+
+    dis non
+
   .icono
   
     &_menu
@@ -24,6 +38,7 @@
     &_search
       t 10
       r 22
+      cur pnt
 
     &_to_bottom_0
       t 4

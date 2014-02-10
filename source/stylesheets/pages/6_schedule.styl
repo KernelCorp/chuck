@@ -1,16 +1,21 @@
 #page_schedule
   hei 445
-  bac-clr red
+  ext gradient_red
   txt-clr white
   pad t 25
 
   &_link
-    pad l 7
+    mar l 28
+    pad l 39
     txt-siz 25.61
+    pos rel
 
   &_days
-    mar t 35
-    pad l 83
+    mar t 35 l 83
+    wid 145
+
+    .day
+      pad r 80
 
     .title
       txt-siz 24
@@ -23,7 +28,7 @@
       ext ib
 
     .time
-      bor t 1 solid (0 0 100)
+      brd t 1 solid (0 0 100)
       wid 114
       pad t 15
 
@@ -37,7 +42,7 @@
       
     .subject
       mar l -60
-      bor l 1 solid (0 0 100)
+      brd l 1 solid (0 0 100)
       pad t 10
       wid 90
       txt-hei 18
@@ -49,3 +54,18 @@
     .age
       txt-siz 14
       txt-stl ita
+
+  .icono
+    &_to_left
+      t 0
+      l 0
+
+    &_arrow_left
+      t 98
+      l 38
+      cur pnt
+
+    &_arrow_right
+      t 98
+      r 63
+      cur pnt

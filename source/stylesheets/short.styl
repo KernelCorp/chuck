@@ -2,16 +2,23 @@
 //начало с гласной и 2 согласных в вслове = гласная и 2 согласных
 //иначе 3 первые буквы
 
-//исключения: направления -> t b r l, z-index -> z, fixed -> fix
+//исключения: направления -> t b r l, z-index -> z, fixed -> fix, border -> brd, pointer -> pnt
 
+siz()
+  width _u(arguments[0])
+  height _u(arguments[1])
 hei()
   height _u(arguments)
 hei-min()
   min-height _u(arguments)
+hei-max()
+  max-height _u(arguments)
 wid()
   width _u(arguments)
 wid-min()
   min-width _u(arguments)
+wid-max()
+  max-width _u(arguments)
 pad()
   _d( padding, arguments )
 mar()
@@ -20,12 +27,14 @@ mar()
   else
     _d( margin, arguments )
 
-bor-clr()
+brd-clr()
   border-color _c(arguments)
-bor-rds()
+brd-rds()
   border-radius _u(arguments)
-bor-wid()
+brd-wid()
   border-width _u(arguments)
+brd-stl()
+  border-style _v( arguments, (dot dotted) (das dashed) (sld solid) (dbl double) (grv groove) (rdg ridge) (ins inset) (out outset) )
 
 ver-ali()
   vertical-align _v( arguments, (t top) (b bottom) (bas baseline) (mid middle) )
@@ -65,7 +74,7 @@ bac-clr()
 bac-siz()
   background-size _u(arguments)
 bac-pos()
-  background-position arguments
+  background-position _u(arguments)
 bac-rpt()
   background-repeat arguments
 
@@ -108,20 +117,32 @@ opa()
   opacity arguments
 
 cur()
-  cursor _v( arguments, (def default) (txt text) (hnd pointer) )
+  cursor _v( arguments, (def default) (txt text) (pnt pointer) )
 
-box()
+box-siz()
   box-sizing _v( arguments, (con content-box) (pad padding-box) (bor border-box) )
+box-sha()
+  box-shadow _u(arguments)
 
 ove()
   overflow _v( arguments, (vis visible) (hid hidden) (scr scroll) )
 
-box-sha()
-  box-shadow _u(arguments)
-
 con()
   content arguments
 
+out()
+  if arguments == non
+    outline none
+  else
+    outline arguments
+out-stl()
+  outline-style _v( arguments, (dot dotted) (das dashed) (sld solid) (dbl double) (grv groove) (rdg ridge) (ins inset) (out outset) )
+out-wid()
+  outline-width _u( arguments )
+out-clr()
+  outline-color _c(arguments)
+out-off()
+  outline-offset _u( arguments )
 
 _border_args( prefix, args )
   for arg in args
@@ -132,7 +153,7 @@ _border_args( prefix, args )
     else
       border{prefix}-color length(arg) > 1 ? _c(arg) : arg
 
-bor(args...)
+brd(args...)
   args = _u(args)
 
   dir = _dir( args[0] )

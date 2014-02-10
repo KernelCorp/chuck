@@ -1,9 +1,28 @@
 #page_fighting_style
   pad b 28
-  bor b 1 solid rgb(210, 211, 211)
+  brd b 1 solid rgb(210, 211, 211)
 
   .menu_top
-    hei 49
+    pad t 20
+    hei 29
+
+  .style_name
+    dis tbl
+    mar cen
+    txt-clr white
+    txt-siz 26
+    txt-hei 26
+    txt-dec und
+
+  .icono
+    
+    &_arrow_left
+      t 25
+      l 59
+
+    &_arrow_right
+      t 25
+      r 59
 
   .content_text
     mar t 42
@@ -25,7 +44,7 @@
     .photo
       mar r 12
     img
-      bor-rds 50%
+      brd-rds 50%
 
     .name
       txt-siz 20

@@ -6,6 +6,8 @@ gem "middleman", "~>3.2.2"
 gem "slim", "~> 2.0"
 gem 'stylus', '~> 0.7.2'
 
+gem 'jquery-middleman'
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 

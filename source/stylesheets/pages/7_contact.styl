@@ -1,0 +1,68 @@
+#page_contact
+  pad t 25
+
+  > .header
+    txt-siz 32
+    txt-ali cen
+
+  > .content_text
+    mar t 20
+    txt-siz 16
+
+  > form
+    mar t 20
+    pad b 25
+
+    input, textarea
+      dis blo
+      wid 238
+      pad 3 10
+      txt-hei 19
+      txt-siz 14
+      brd 1 solid (0 0 57)
+      brd-rds 3
+      mar b 13
+      mar cen
+      out non
+    input
+      hei 19
+    textarea
+      hei 95
+
+    button
+      dis blo
+
+      hei 27
+      wid 104
+      mar cen
+      pad 0
+
+      bac-clr red
+
+      txt-clr white
+      txt-siz 14
+      txt-hei 27
+      txt-ali cen
+
+      brd 0 solid ( 0 100 20 ) t 3
+      brd-rds 3
+
+      cur pnt
+      out non
+
+      box-siz con
+
+      &:hover
+        brd-clr 0 100 0
+      &:active
+        brd t 1
+        mar b 2
+
+  &_map
+    hei 192
+    brd t 2 solid ( 19 100 34 )
+
+  .ymaps-copyrights-logo
+  .ymaps-copyrights-legend
+    dis non
+

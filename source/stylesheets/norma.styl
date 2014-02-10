@@ -36,8 +36,10 @@ _d( prop, args )
       if even(i)
         {s( '%s-%s', prop, args[i] )}: args[i+1]
 
-_v( arg, variants )
-  push( variants, (non none), (inh inherit), (aut auto), (nor normal) )
+_v( arg, variants = false )
+  vors = (non none) (inh inherit) (ini initial) (aut auto) (nor normal)
+
+  push( variants, (non none), (inh inherit), (ini initial), (aut auto), (nor normal) )
   
   for var in variants
     if arg == var[0]

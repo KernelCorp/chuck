@@ -41,7 +41,7 @@ $(function(){
 
   $(window)
   .on( 'scroll resize', function(event) {
-    window_middle = $(this).scrollTop() + $(this).height() * 0.5;
+    window_middle = $(this).scrollTop() + ( window.innerHeight ? window.innerHeight : $(this).height() ) * 0.5;
     placeCirclesContainer();
     checkCircleDivs();
   })

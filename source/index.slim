@@ -30,35 +30,54 @@ title: Welcome to Middleman
   .page id='page_fighting_style'
     .menu_top.red
       .icono_arrow_left
-      .style_name Карате
+      .style_name
       .icono_arrow_right
 
-    img.fighting_style_img src='images/img_2.jpg'
+    #page_fighting_styles
+      .finghting_style data={ style_name: 'Карате' }
+        img.fighting_style_img src='images/img_2.jpg'
 
-    .content_text Лучший способ достичь совершенства - довериться чемпионам. Занятия карате - способ всестороннего развития лучших качеств: самообладания, дисциплины и уверенности в себе.
+        .content_text Лучший способ достичь совершенства - довериться чемпионам. Занятия карате - способ всестороннего развития лучших качеств: самообладания, дисциплины и уверенности в себе.
 
-    .header.fighting_style_masters Наставники
+        .header.fighting_style_masters Наставники
 
-    .master
-      .photo
-        img src='images/face_1.jpg'
-      .about
-        .name Денис Клюев
-        .rang Мастер спорта России по каратэ
+        .master
+          .photo
+            img src='images/face_1.jpg'
+          .about
+            .name Денис Клюев
+            .rang Мастер спорта России по каратэ
+        .master
+          .photo
+            img src='images/face_2.jpg'
+          .about
+            .name Глеб Иванов
+            .rang Мастер спорта России по самбо <br> Бронозовый призер Евро 2012
+        .master
+          .photo
+            img src='images/face_3.jpg'
+          .about
+            .name Сергей Вейс
+            .rang КМС России по каратэ <br> Обладатель 1 Дана каратэ
 
-    .master
-      .photo
-        img src='images/face_2.jpg'
-      .about
-        .name Глеб Иванов
-        .rang Мастер спорта России по самбо <br> Бронозовый призер Евро 2012
+      .finghting_style data={ style_name: 'Боевое самбо' }
+        img.fighting_style_img src='images/img_2.jpg'
+        .content_text Лучший способ достичь совершенства - довериться чемпионам. Занятия карате - способ всестороннего развития лучших качеств: самообладания, дисциплины и уверенности в себе.
 
-    .master
-      .photo
-        img src='images/face_3.jpg'
-      .about
-        .name Денис Клюев
-        .rang КМС России по каратэ <br> Обладатель 1 Дана каратэ
+        .header.fighting_style_masters Наставники
+
+        .master
+          .photo
+            img src='images/face_1.jpg'
+          .about
+            .name Денис Клюев
+            .rang Мастер спорта России по каратэ
+        .master
+          .photo
+            img src='images/face_2.jpg'
+          .about
+            .name Глеб Иванов
+            .rang Мастер спорта России по самбо <br> Бронозовый призер Евро 2012
 
   .page id='page_mission'
     .header.txt_red Наша миссия

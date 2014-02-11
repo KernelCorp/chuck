@@ -49,6 +49,12 @@ end
 # Gem
 ###
 
+require 'stylus'
+
+Stylus.use :nib
+Stylus.debug = true
+
+
 require 'slim'
 
 set :css_dir, 'stylesheets'
